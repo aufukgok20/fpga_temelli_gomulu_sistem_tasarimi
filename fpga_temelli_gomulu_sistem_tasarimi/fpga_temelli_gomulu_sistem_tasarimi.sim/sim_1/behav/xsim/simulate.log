@@ -1,0 +1,4 @@
+Time resolution is 1 ps
+Failure: SIM DONE
+Time: 270 ns  Iteration: 0  Process: /tb_num_comp/line__84  File: D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi.srcs/sim_1/new/tb_num_comp.vhd
+$finish called at time : 270 ns : File "D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi.srcs/sim_1/new/tb_num_comp.vhd" Line 126
