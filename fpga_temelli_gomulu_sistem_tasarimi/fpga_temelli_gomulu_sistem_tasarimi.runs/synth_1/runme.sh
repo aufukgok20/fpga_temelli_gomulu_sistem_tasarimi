@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/GIT/FPGA/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi.runs/synth_1'
+HD_PWD='D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log and2.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source and2.tcl
+EAStep vivado -log num_comp.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source num_comp.tcl

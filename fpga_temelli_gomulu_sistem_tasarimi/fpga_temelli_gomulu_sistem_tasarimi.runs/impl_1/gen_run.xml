@@ -1,87 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1742756739">
-  <File Type="ROUTE-PWR" Name="and2_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="and2.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="and2_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="and2_reports.tcl"/>
-  <File Type="BITSTR-MSK" Name="and2.msk"/>
-  <File Type="ROUTE-CLK" Name="and2_clock_utilization_routed.rpt"/>
-  <File Type="RDI-RDI" Name="and2.vdi"/>
-  <File Type="BG-BIT" Name="and2.bit"/>
-  <File Type="BG-DRC" Name="and2.drc"/>
-  <File Type="BG-BGN" Name="and2.bgn"/>
-  <File Type="BG-BIN" Name="and2.bin"/>
-  <File Type="BITSTR-RBT" Name="and2.rbt"/>
-  <File Type="BITSTR-NKY" Name="and2.nky"/>
-  <File Type="BITSTR-BMM" Name="and2_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="and2.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="and2_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-SYSDEF" Name="and2.sysdef"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1742931369">
+  <File Type="ROUTE-PWR" Name="num_comp_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="num_comp.tcl"/>
+  <File Type="BITSTR-MMI" Name="num_comp.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="num_comp_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="num_comp_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="num_comp_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="num_comp_reports.tcl"/>
+  <File Type="OPT-TIMING" Name="num_comp_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="num_comp_opt.dcp"/>
+  <File Type="OPT-DRC" Name="num_comp_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="num_comp.hwdef"/>
+  <File Type="PWROPT-DCP" Name="num_comp_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="num_comp_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="num_comp_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="num_comp_placed.dcp"/>
+  <File Type="PLACE-IO" Name="num_comp_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="num_comp_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="num_comp_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="num_comp_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="num_comp_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="num_comp_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="num_comp_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="num_comp.bin"/>
+  <File Type="PLACE-TIMING" Name="num_comp_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="num_comp_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="num_comp.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="num_comp_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="num_comp_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="num_comp_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="num_comp.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="num_comp_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="num_comp_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="num_comp_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="num_comp_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="num_comp_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="num_comp_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="num_comp_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="num_comp_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="num_comp_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="num_comp_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="num_comp_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="num_comp_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="num_comp_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="num_comp_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="num_comp_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="num_comp_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="num_comp_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="num_comp_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="num_comp_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="num_comp_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="num_comp_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="num_comp_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="num_comp_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="num_comp_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="num_comp_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="num_comp_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="num_comp_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="num_comp.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="num_comp_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="num_comp_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="num_comp.nky"/>
+  <File Type="BITSTR-BMM" Name="num_comp_bd.bmm"/>
+  <File Type="PDI-FILE" Name="num_comp.pdi"/>
+  <File Type="RCFI_FILE" Name="num_comp.rcfi"/>
+  <File Type="CFI_FILE" Name="num_comp.cfi"/>
+  <File Type="RNPI_FILE" Name="num_comp.rnpi"/>
+  <File Type="NPI_FILE" Name="num_comp.npi"/>
+  <File Type="RBD_FILE" Name="num_comp.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="and2.ltx"/>
+  <File Type="BITSTR-LTX" Name="num_comp.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="num_comp.sysdef"/>
+  <File Type="BG-BGN" Name="num_comp.bgn"/>
+  <File Type="BG-DRC" Name="num_comp.drc"/>
+  <File Type="RDI-RDI" Name="num_comp.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="OPT-DRC" Name="and2_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="and2.hwdef"/>
-  <File Type="PLACE-IO" Name="and2_io_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="and2_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="and2_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="and2_control_sets_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="and2_incremental_reuse_pre_placed.rpt"/>
-  <File Type="ROUTE-DRC" Name="and2_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="and2_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="and2_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="and2_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="and2_route_status.pb"/>
-  <File Type="ROUTE-DCP" Name="and2_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="and2_routed_error.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="and2_routed_bb.dcp"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="and2_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="and2_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="and2_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-BUS-SKEW" Name="and2_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="and2_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="and2_bus_skew_routed.rpx"/>
-  <File Type="OPT-DCP" Name="and2_opt.dcp"/>
-  <File Type="PLACE-DCP" Name="and2_placed.dcp"/>
-  <File Type="PWROPT-DCP" Name="and2_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="and2_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="and2_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="and2_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="and2_postroute_physopt_bb.dcp"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="and2_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="and2_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="and2_methodology_drc_routed.rpx"/>
-  <File Type="PDI-FILE" Name="and2.pdi"/>
-  <File Type="RCFI_FILE" Name="and2.rcfi"/>
-  <File Type="CFI_FILE" Name="and2.cfi"/>
-  <File Type="RNPI_FILE" Name="and2.rnpi"/>
-  <File Type="NPI_FILE" Name="and2.npi"/>
-  <File Type="RBD_FILE" Name="and2.rbd"/>
-  <File Type="ROUTE-RQS" Name="and2_routed.rqs"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="and2_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="num_comp_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="num_comp_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/sevenseg_led.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/num_comp.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/and2.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="and2"/>
+      <Option Name="TopModule" Val="num_comp"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/Nexys-A7-100T.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
     <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/and2.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
@@ -97,6 +142,5 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>

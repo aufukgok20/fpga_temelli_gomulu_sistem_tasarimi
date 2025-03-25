@@ -8,21 +8,15 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity num_comp is
     generic (
         c_clkfreq   : INTEGER := 100_000_000;
-        c_data_width : INTEGER := 4;
-        c_data_piece : INTEGER := 4
+        c_data_width : INTEGER := 8
     );
     Port (
         clk         : in STD_LOGIC;
-        data_in     : in  STD_LOGIC_VECTOR(c_data_width-1 downto 0);
-        sel_in      : in  STD_LOGIC_VECTOR(2 downto 0);
-        sel_birler  : in  STD_LOGIC_VECTOR(c_data_piece-1 downto 0);
-        sel_onlar   : in  STD_LOGIC_VECTOR(c_data_piece-1 downto 0);
-        sel_yuzler  : in  STD_LOGIC_VECTOR(c_data_piece-1 downto 0);
+        result_max  : in  STD_LOGIC;
+        result_mid  : in  STD_LOGIC;
+        result_min  : in  STD_LOGIC;
         anodes_o	: out  std_logic_vector (7 downto 0);
-        seven_seg_o	: out std_logic_vector (7 downto 0);
-        o_max       : out STD_LOGIC_VECTOR(c_data_width-1 downto 0);
-        o_mid       : out STD_LOGIC_VECTOR(c_data_width-1 downto 0);
-        o_min       : out STD_LOGIC_VECTOR(c_data_width-1 downto 0)
+        seven_seg_o	: out std_logic_vector (7 downto 0)
     );
 end num_comp;
 
@@ -36,20 +30,30 @@ signal sorted_data : t_array_num;
 
 signal i, j, k      : INTEGER := 0;
 
-signal temp_num1  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := (others => '0');
-signal temp_num2  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := (others => '0');
-signal temp_num3  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := (others => '0');
-signal temp_num4  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := (others => '0');
-signal temp_num5  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := (others => '0');
--- signal temp_num6  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := (others => '0');
--- signal temp_num7  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := (others => '0');
--- signal temp_num8  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := (others => '0');
--- signal temp_num9  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := (others => '0');
+signal temp_num1  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := "00001111"; --15 9 
+signal temp_num2  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := "01000100"; --68 5
+signal temp_num3  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := "01001001"; --73 4
+signal temp_num4  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := "00111000"; --56 6
+signal temp_num5  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := "01100010"; --98 2
+signal temp_num6  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := "00011001"; --88 3
+signal temp_num7  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := "00110101"; --53 7
+signal temp_num8  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := "00101010"; --42 8
+signal temp_num9  : STD_LOGIC_VECTOR(c_data_width-1 downto 0) := "01100011"; --99 1
  
-signal anodes     : std_logic_vector (7 downto 0) := "11111110";
-signal result_seg_birler : std_logic_vector (7 downto 0) := (others => '1');
-signal result_seg_onlar  : std_logic_vector (7 downto 0) := (others => '1');
-signal result_seg_yuzler : std_logic_vector (7 downto 0) := (others => '1');
+signal anodes            : std_logic_vector (7 downto 0) := "11111110";
+signal max_seg_birler : std_logic_vector (7 downto 0) := (others => '1');
+signal max_seg_onlar  : std_logic_vector (7 downto 0) := (others => '1');
+signal mid_seg_birler : std_logic_vector (7 downto 0) := (others => '1');
+signal mid_seg_onlar  : std_logic_vector (7 downto 0) := (others => '1');
+signal min_seg_birler : std_logic_vector (7 downto 0) := (others => '1');
+signal min_seg_onlar  : std_logic_vector (7 downto 0) := (others => '1');
+
+signal max_birler : STD_LOGIC_VECTOR(3 downto 0) := ((others => '0'));
+signal max_onlar  : STD_LOGIC_VECTOR(3 downto 0) := ((others => '0'));
+signal mid_birler : STD_LOGIC_VECTOR(3 downto 0) := ((others => '0'));
+signal mid_onlar  : STD_LOGIC_VECTOR(3 downto 0) := ((others => '0'));
+signal min_birler : STD_LOGIC_VECTOR(3 downto 0) := ((others => '0'));
+signal min_onlar  : STD_LOGIC_VECTOR(3 downto 0) := ((others => '0'));
 
 component sevenseg_led is
     port (
@@ -60,63 +64,89 @@ end component;
 
 begin
 
-    i_RESULT_SEG_Birler: sevenseg_led
+    i_MAX_SEG_Birler: sevenseg_led
     port map 
         (
-        bcd_i	   => sel_birler, 
-        sevenseg_o => result_seg_birler
+        bcd_i	   => max_birler, 
+        sevenseg_o => max_seg_birler
         );
     
-        i_RESULT_SEG_Onlar: sevenseg_led
+        i_MAX_SEG_Onlar: sevenseg_led
     port map 
         (
-        bcd_i	   => sel_onlar, 
-        sevenseg_o => result_seg_onlar
+        bcd_i	   => max_onlar, 
+        sevenseg_o => max_seg_onlar
         );
 
-        i_RESULT_SEG_Yuzler: sevenseg_led
+        i_MID_SEG_Birler: sevenseg_led
     port map 
         (
-        bcd_i	   => sel_yuzler, 
-        sevenseg_o => result_seg_yuzler
+        bcd_i	   => mid_birler, 
+        sevenseg_o => mid_seg_birler
+        );
+    
+        i_MID_SEG_Onlar: sevenseg_led
+    port map 
+        (
+        bcd_i	   => mid_onlar, 
+        sevenseg_o => mid_seg_onlar
         );
 
-    process(sel_in)
+        i_MIN_SEG_Birler: sevenseg_led
+    port map 
+        (
+        bcd_i	   => min_birler, 
+        sevenseg_o => min_seg_birler
+        );
+    
+        i_MIN_SEG_Onlar: sevenseg_led
+    port map 
+        (
+        bcd_i	   => min_onlar, 
+        sevenseg_o => min_seg_onlar
+        );
+    
+    process (clk,result_max)
     begin
-        
-        if (sel_in = "0001") then
-            temp_num1 <= data_in;
-        end if;
-        if (sel_in = "0010") then
-            temp_num2 <= data_in;
-        end if;
-        if (sel_in = "0011") then
-            temp_num3 <= data_in;
-        end if;
-        if (sel_in = "0100") then
-            temp_num4 <= data_in;
-        end if;
-        if (sel_in = "0101") then
-            temp_num5 <= data_in;
-        end if;
-        -- if (sel_in = "0110") then
-        --     temp_num6 <= data_in;
-        -- end if;
-        -- if (sel_in = "0111") then
-        --     temp_num7 <= data_in;
-        -- end if;
-        -- if (sel_in = "1000") then
-        --     temp_num8 <= data_in;
-        -- end if;
+        if (rising_edge(clk)) then
+            if (result_max = '1') then
+                max_birler <= "1001"; 
+                max_onlar  <= "1001";
+            else
+                max_birler <= "0000";
+                max_onlar  <= "0000"; 
+            end if;  
+        end if;  
+    end process; 
 
-        -- if (sel_in = "1001") then
-        --     temp_num9 <= data_in;
-        -- end if;
-    
-    end process;
+    process (clk,result_mid)
+    begin
+        if (rising_edge(clk)) then
+            if (result_mid = '1') then
+                mid_birler <= "1000";
+                mid_onlar  <= "0110";
+            else
+                mid_birler <= "0000";
+                mid_onlar  <= "0000";
+            end if;   
+        end if;   
+    end process; 
+
+    process (clk,result_min)
+    begin
+        if (rising_edge(clk)) then
+            if (result_min = '1') then
+                min_birler <= "0101"; 
+                min_onlar  <= "0001";
+            else
+                min_birler <= "0000";
+                min_onlar  <= "0000";    
+            end if;    
+        end if; 
+    end process; 
 
 
-    process (temp_num1,temp_num2,temp_num3,temp_num4,temp_num5) --,temp_num6,temp_num7,temp_num8,temp_num9
+    process (temp_num1,temp_num2,temp_num3,temp_num4,temp_num5,temp_num6,temp_num7,temp_num8,temp_num9)
         variable temp : t_array_num;
         variable t : std_logic_vector(c_data_width-1 downto 0);
         
@@ -126,10 +156,10 @@ begin
         temp(2) := temp_num3;
         temp(3) := temp_num4;
         temp(4) := temp_num5;
-        -- temp(5) := temp_num6;
-        -- temp(6) := temp_num7;
-        -- temp(7) := temp_num8;
-        -- temp(8) := temp_num9;
+        temp(5) := temp_num6;
+        temp(6) := temp_num7;
+        temp(7) := temp_num8;
+        temp(8) := temp_num9;
 
         for i in 0 to 3 loop
             for j in 0 to 3-i loop
@@ -146,22 +176,17 @@ begin
 
     end process;
 
-
-    o_max <= sorted_data(4);
-    o_mid <= sorted_data(2);
-    o_min <= sorted_data(0);
-
     P_ANODES : process (clk) begin
         if (rising_edge(clk)) then
         
-            anodes(7 downto 3)	<= "11111";
+            anodes(7 downto 6)	<= "11";
         
             if (timer1ms = c_timer1mslim-1) then
-                timer1ms				<= 0;
-                anodes(2 downto 1)		<= anodes(1 downto 0);
-                anodes(0)				<= anodes(2);
+                timer1ms	<= 0;
+                anodes(5 downto 1)	<= anodes(4 downto 0);
+                anodes(0)	        <= anodes(5);
             else
-                timer1ms				<= timer1ms + 1;
+                timer1ms	<= timer1ms + 1;
             end if;
         
         end if;
@@ -171,11 +196,17 @@ begin
     begin
         if (RISING_EDGE(clk)) then
             if (anodes(0) = '0') then
-                seven_seg_o <= result_seg_birler;
+                seven_seg_o <= max_seg_birler;
             elsif (anodes(1) = '0') then
-                seven_seg_o <= result_seg_onlar;
+                seven_seg_o <= max_seg_onlar;
             elsif (anodes(2) = '0') then
-                seven_seg_o <= result_seg_yuzler;
+                seven_seg_o <= mid_seg_birler;
+            elsif (anodes(3) = '0') then
+                seven_seg_o <= mid_seg_onlar;
+            elsif (anodes(4) = '0') then
+                seven_seg_o <= min_seg_birler;
+            elsif (anodes(5) = '0') then
+                seven_seg_o <= min_seg_onlar;  
             else
                 seven_seg_o <= ((others => '1'));
             end if;
