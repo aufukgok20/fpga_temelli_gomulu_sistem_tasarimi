@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1742931246" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/and2.dcp">
-  <File Type="PA-TCL" Name="num_comp.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="num_comp_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="num_comp_reports.tcl"/>
-  <File Type="RDS-RDS" Name="num_comp.vds"/>
-  <File Type="RDS-UTIL" Name="num_comp_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="num_comp_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="num_comp.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="num_comp_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="num_comp_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1743102895" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/and2.dcp">
+  <File Type="PA-TCL" Name="Matrix.tcl"/>
+  <File Type="REPORTS-TCL" Name="Matrix_reports.tcl"/>
+  <File Type="RDS-RDS" Name="Matrix.vds"/>
+  <File Type="RDS-DCP" Name="Matrix.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/seven_segment.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Matrix.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/sevenseg_led.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/num_comp.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -32,12 +41,11 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="num_comp"/>
+      <Option Name="TopModule" Val="Matrix"/>
     </Config>
   </FileSet>
-  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
-    <Filter Type="Constrs"/>
-    <File Path="$PSRCDIR/constrs_1/new/Nexys-A7-100T.xdc">
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_matrix">
+    <File Path="$PSRCDIR/constrs_matrix/new/Nexys-A7-100T-Matrix.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

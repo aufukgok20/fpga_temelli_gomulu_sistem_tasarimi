@@ -2,11 +2,31 @@
 #define FPGA_PROJE_VERSIYON_H_
 
 
-#define VERSIYON "0.0.3201"
+#define VERSIYON "0.0.3202"
 #define MAJOR 0
 #define MINOR 0
-#define BUILD 3201
+#define BUILD 3202
 
+
+/*!**************************************************************************************
+ *  @Versiyon: v0.0.3.202
+ *  @Tarih: 15.04.2025
+ *  @Yazan:  Ahmet Ufuk Gok (aufukgok20@gmail.com)
+ *
+ *  @Gelistirme Araclari
+ *    Vivado : 2022.2
+ *
+ *  @Aciklama:
+ *  Youtube - Mehmet Burak Aykenar VHDL ile FPGA Programlama
+ *  https://www.youtube.com/watch?v=Vwq4C9wLrDo&list=PLZyLAHn509339oyv3vi-3Gdyb8bfPx7Ro&index=7
+ *  https://www.youtube.com/watch?v=L6oYg3yUfdk&list=PLZyLAHn509339oyv3vi-3Gdyb8bfPx7Ro&index=8
+ *
+ *  - Ders_6
+ *    VHDL Hierarchical Tasarım N Bit Adder
+ *  - Ders_7
+ *    Vivado Synthesis ve Testbench Simulation
+ ****************************************************************************************/
+ 
 
 /*!**************************************************************************************
  *  @Versiyon: v0.0.3.201
