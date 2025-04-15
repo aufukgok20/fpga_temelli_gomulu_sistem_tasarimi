@@ -2,10 +2,27 @@
 #define FPGA_PROJE_VERSIYON_H_
 
 
-#define VERSIYON "0.0.3200"
+#define VERSIYON "0.0.3201"
 #define MAJOR 0
 #define MINOR 0
-#define BUILD 3200
+#define BUILD 3201
+
+
+/*!**************************************************************************************
+ *  @Versiyon: v0.0.3.201
+ *  @Tarih: 15.04.2025
+ *  @Yazan: Mustafa Gok    (mustafa.gok.ee@gmail.com) 
+ *          Ahmet Ufuk Gok (aufukgok20@gmail.com    )
+ *
+ *  @Gelistirme Araclari
+ *    Vivado : 2022.2
+ *
+ *  @Aciklama:
+ *
+ *  - odev_1 icin calisma yapildi.
+ *  - matriks 3x3 olusturuldu ve satir sutun olarak seven segmentte gosterildi.
+ ****************************************************************************************/
+
 
 
 /*!**************************************************************************************
