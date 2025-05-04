@@ -1,19 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1743102895" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/and2.dcp">
-  <File Type="PA-TCL" Name="Matrix.tcl"/>
-  <File Type="REPORTS-TCL" Name="Matrix_reports.tcl"/>
-  <File Type="RDS-RDS" Name="Matrix.vds"/>
-  <File Type="RDS-DCP" Name="Matrix.dcp"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1746364937" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/and2.dcp">
+  <File Type="PA-TCL" Name="mux2x1.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="mux2x1_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="mux2x1_reports.tcl"/>
+  <File Type="RDS-RDS" Name="mux2x1.vds"/>
+  <File Type="RDS-UTIL" Name="mux2x1_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="mux2x1_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="mux2x1.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="mux2x1_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="mux2x1_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/mux2x1.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/full_adder.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/half_adder.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/n_bit_adder.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/top.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/seven_segment.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/Matrix.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -41,7 +82,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Matrix"/>
+      <Option Name="TopModule" Val="mux2x1"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_matrix">
