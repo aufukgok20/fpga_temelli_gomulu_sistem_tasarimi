@@ -5,7 +5,24 @@
 #define VERSIYON "0.0.3202"
 #define MAJOR 0
 #define MINOR 0
-#define BUILD 3203
+#define BUILD 3204
+
+
+/*!**************************************************************************************
+ *  @Versiyon: v0.0.3.204
+ *  @Tarih: 04.05.2025
+ *  @Yazan:  Ahmet Ufuk Gok (aufukgok20@gmail.com)
+ *
+ *  @Gelistirme Araclari
+ *    Vivado : 2022.2
+ *
+ *  @Aciklama:
+ *  Youtube - Mehmet Burak Aykenar VHDL ile FPGA Programlama
+ *  https://www.youtube.com/watch?v=FtwLot3lbz0&list=PLZyLAHn509339oyv3vi-3Gdyb8bfPx7Ro&index=11
+ *
+ *  - Ders_10
+ *    Sequential Logic Tasarımı Timer ve Counter
+ ****************************************************************************************/
 
 
 /*!**************************************************************************************
