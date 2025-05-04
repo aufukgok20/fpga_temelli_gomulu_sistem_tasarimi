@@ -5,8 +5,26 @@
 #define VERSIYON "0.0.3202"
 #define MAJOR 0
 #define MINOR 0
-#define BUILD 3204
+#define BUILD 3205
 
+
+/*!**************************************************************************************
+ *  @Versiyon: v0.0.3.205
+ *  @Tarih: 04.05.2025
+ *  @Yazan:  Ahmet Ufuk Gok (aufukgok20@gmail.com)
+ *
+ *  @Gelistirme Araclari
+ *    Vivado : 2022.2
+ *
+ *  @Aciklama:
+ *  Youtube - Mehmet Burak Aykenar VHDL ile FPGA Programlama
+ *  https://www.youtube.com/watch?v=tVT7DAJUqFM&list=PLZyLAHn509339oyv3vi-3Gdyb8bfPx7Ro&index=12
+ *  https://www.youtube.com/watch?v=uVZPFG6Vlt4&list=PLZyLAHn509339oyv3vi-3Gdyb8bfPx7Ro&index=13
+ *
+ *  - Ders_11_12
+ *    VHDL State Machine Örneği Debounce Devre
+ ****************************************************************************************/
+ 
 
 /*!**************************************************************************************
  *  @Versiyon: v0.0.3.204

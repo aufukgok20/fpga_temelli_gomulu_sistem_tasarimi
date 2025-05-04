@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1746368355" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/and2.dcp">
-  <File Type="PA-TCL" Name="timer_counter.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="timer_counter_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="timer_counter_reports.tcl"/>
-  <File Type="RDS-RDS" Name="timer_counter.vds"/>
-  <File Type="RDS-UTIL" Name="timer_counter_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="timer_counter_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="timer_counter.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="timer_counter_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="timer_counter_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1746371887" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/and2.dcp">
+  <File Type="PA-TCL" Name="state_machine_button_debounce.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="state_machine_button_debounce_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="state_machine_button_debounce_reports.tcl"/>
+  <File Type="RDS-RDS" Name="state_machine_button_debounce.vds"/>
+  <File Type="RDS-UTIL" Name="state_machine_button_debounce_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="state_machine_button_debounce_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="state_machine_button_debounce.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="state_machine_button_debounce_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="state_machine_button_debounce_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/state_machine_button_debounce.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/timer_counter.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -89,7 +96,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="timer_counter"/>
+      <Option Name="TopModule" Val="state_machine_button_debounce"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_matrix">

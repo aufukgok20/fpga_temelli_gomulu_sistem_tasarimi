@@ -1,14 +1,15 @@
-
-*** Running vivado
-    with args -log state_machine_button_debounce.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source state_machine_button_debounce.tcl
-
-
-
-****** Vivado v2022.2 (64-bit)
-  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
-  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sun May  4 18:18:12 2025
+# Process ID: 13040
+# Current directory: D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi.runs/synth_1
+# Command line: vivado.exe -log state_machine_button_debounce.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source state_machine_button_debounce.tcl
+# Log file: D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi.runs/synth_1/state_machine_button_debounce.vds
+# Journal file: D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi.runs/synth_1\vivado.jou
+# Running On: DESKTOP-11IAEMT, OS: Windows, CPU Frequency: 2394 MHz, CPU Physical cores: 2, Host memory: 17098 MB
+#-----------------------------------------------------------
 source state_machine_button_debounce.tcl -notrace
 create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1002.051 ; gain = 117.742
 Command: read_checkpoint -auto_incremental -incremental D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi.srcs/utils_1/imports/synth_1/and2.dcp
