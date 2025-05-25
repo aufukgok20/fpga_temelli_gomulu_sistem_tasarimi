@@ -1,0 +1,149 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Sun May 25 23:06:59 2025
+| Host         : DESKTOP-11IAEMT running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ddr'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of ddr from xilinx.com:ip:mig_7series:4.1 to xilinx.com:ip:mig_7series:4.2 (Rev. 1)
+
+After upgrade, an IP may have parameter differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality.
+
+2. Failures
+-----------
+
+Failed to generate IP 'ddr'. Failed to generate 'VHDL Instantiation Template' outputs: 
+
+3. Warnings
+-----------
+
+ERROR: The prj file not found at location d:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi.srcs/ip/ddr/mig_a.prj. User should either restore the file in the original location d:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi.srcs/ip/ddr/mig_a.prj or place a copy of the file in the same path as the xci file d:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi.srcs/ip/ddr/mig_a.prj
+
+
+WARNING: The upgraded user parameter set contained parameters that could not be mapped on to the upgraded IP. When checking the upgrade script, note that parameter names are case sensitive.
+
+
+4. Customization warnings
+-------------------------
+
+The normal upgrade process failed due to validation failures in the given configuration. Attempting partial upgrade to set as many user parameters as possible. Please check the parameters whose values were not applied.
+
+Customization errors found on 'ddr'. Restoring to previous valid configuration.
+
+
+5. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:ip:mig_7series:4.2 -user_name ddr
+set_property -dict "\
+  CONFIG.BOARD_MIG_PARAM {Custom} \
+  CONFIG.Component_Name {ddr} \
+  CONFIG.MIG_DONT_TOUCH_PARAM {Custom} \
+  CONFIG.RESET_BOARD_INTERFACE {Custom} \
+  CONFIG.XML_INPUT_FILE {mig_a.prj} " [get_ips ddr]
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Sun May 25 22:36:19 2025
+| Host         : DESKTOP-11IAEMT running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'ClkGen'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of ClkGen (xilinx.com:ip:clk_wiz:6.0) from (Rev. 1) to (Rev. 11)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'ClkGen'.
+
+
+-Upgrade has removed interface 'CLOCK_CLK_IN1'
+
+-Upgrade has removed interface 'CLOCK_CLK_OUT1'
+
+-Upgrade has removed interface 'CLOCK_CLK_OUT2'
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'ClkGen'. These changes may impact your design.
+
+
+-Upgrade has added port 'clk_100MHz_i'
+
+-Upgrade has added port 'clk_100MHz_o'
+
+-Upgrade has added port 'clk_200MHz_o'
+
+-Upgrade has added port 'locked_o'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Sun May 25 22:16:00 2025
+| Host         : DESKTOP-11IAEMT running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'BRAM_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of BRAM_1 (xilinx.com:ip:blk_mem_gen:8.4) from (Rev. 1) to (Rev. 5)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'BRAM_1'. These changes may impact your design.
+
+
+-Upgraded port 'addra' width 17 differs from original width 4
+
+-Upgraded port 'douta' width 12 differs from original width 16
+
+-Upgrade has removed port 'dina'
+
+-Upgrade has removed port 'ena'
+
+-Upgrade has removed port 'wea'
+
+

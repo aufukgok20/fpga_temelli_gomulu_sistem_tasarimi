@@ -2,10 +2,23 @@
 #define FPGA_PROJE_VERSIYON_H_
 
 
-#define VERSIYON "0.0.3202"
+#define VERSIYON "0.0.3206"
 #define MAJOR 0
 #define MINOR 0
-#define BUILD 3205
+#define BUILD 3206
+
+
+/*!**************************************************************************************
+ *  @Versiyon: v0.0.3.206
+ *  @Tarih: 25.05.2025
+ *  @Yazan:  Ahmet Ufuk Gok (aufukgok20@gmail.com)
+ *
+ *  @Gelistirme Araclari
+ *    Vivado : 2022.2
+ *
+ *  @Aciklama:
+ *  - VGA Projesi Digilent gorseli ve uart calismasi yapilmistir.
+ ****************************************************************************************/
 
 
 /*!**************************************************************************************

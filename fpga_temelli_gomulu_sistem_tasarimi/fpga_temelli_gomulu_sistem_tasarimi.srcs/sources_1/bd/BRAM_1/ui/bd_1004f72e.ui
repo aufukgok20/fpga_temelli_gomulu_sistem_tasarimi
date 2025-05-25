@@ -1,0 +1,15 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-7,-184",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 1 -x 320 -y 60 -defaultsOSRD
+levelinfo -pg 1 0 320 470
+pagesize -pg 1 -db -bbox -sgen 0 -20 470 160
+"
+}
+{
+   "da_bram_cntlr_cnt":"2"
+}

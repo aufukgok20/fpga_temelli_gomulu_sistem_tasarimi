@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log state_machine_button_debounce.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source state_machine_button_debounce.tcl
+EAStep vivado -log Nexys4DdrUserDemo.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Nexys4DdrUserDemo.tcl

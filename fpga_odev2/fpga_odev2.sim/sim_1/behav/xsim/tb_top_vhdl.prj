@@ -1,0 +1,14 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../fpga_odev2.srcs/sources_1/new/bcd_to_7segment.vhd" \
+"../../../../fpga_odev2.srcs/sources_1/new/binary_to_bcd.vhd" \
+"../../../../fpga_odev2.srcs/sources_1/new/data_collector.vhd" \
+"../../../../fpga_odev2.srcs/sources_1/new/display_mux.vhd" \
+"../../../../fpga_odev2.srcs/sources_1/new/min_med_max_extractor.vhd" \
+"../../../../fpga_odev2.srcs/sources_1/new/sorter.vhd" \
+"../../../../fpga_odev2.srcs/sources_1/new/uart_rx.vhd" \
+"../../../../fpga_odev2.srcs/sources_1/new/top_level.vhd" \
+"../../../../fpga_odev2.srcs/sim_1/new/tb_top.vhd" \
+
+# Do not sort compile order
+nosort

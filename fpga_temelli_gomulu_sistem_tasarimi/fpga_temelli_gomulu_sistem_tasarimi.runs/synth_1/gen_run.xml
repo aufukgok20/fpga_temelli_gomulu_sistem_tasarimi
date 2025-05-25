@@ -1,30 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1746371887" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/and2.dcp">
-  <File Type="PA-TCL" Name="state_machine_button_debounce.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="state_machine_button_debounce_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="state_machine_button_debounce_reports.tcl"/>
-  <File Type="RDS-RDS" Name="state_machine_button_debounce.vds"/>
-  <File Type="RDS-UTIL" Name="state_machine_button_debounce_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="state_machine_button_debounce_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="state_machine_button_debounce.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="state_machine_button_debounce_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="state_machine_button_debounce_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1748204122" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/and2.dcp">
+  <File Type="PA-TCL" Name="Nexys4DdrUserDemo.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="Nexys4DdrUserDemo_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="Nexys4DdrUserDemo_reports.tcl"/>
+  <File Type="RDS-RDS" Name="Nexys4DdrUserDemo.vds"/>
+  <File Type="RDS-UTIL" Name="Nexys4DdrUserDemo_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Nexys4DdrUserDemo_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="Nexys4DdrUserDemo.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="Nexys4DdrUserDemo_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="Nexys4DdrUserDemo_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/state_machine_button_debounce.vhd">
+    <File Path="$PSRCDIR/ip/BRAM_1/BRAM_1.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/ip/ClkGen/ClkGen.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/LogoDisplay.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/timer_counter.vhd">
+    <File Path="$PSRCDIR/sources_1/new/OverlayCtl.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/vga.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/top_vga.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/seven_segment.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/mux2x1.vhd">
+    <File Path="$PSRCDIR/sources_1/new/Matrix.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/and2.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -45,7 +85,43 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/mux2x1.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/n_bit_adder.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/num_comp.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sevenseg_led.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/state_machine_button_debounce.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/timer_counter.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -59,49 +135,22 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/seven_segment.vhd">
+    <File Path="$PSRCDIR/other/Nexys4_all.coe">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/Matrix.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/sevenseg_led.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/num_comp.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/and2.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="state_machine_button_debounce"/>
+      <Option Name="TopModule" Val="Nexys4DdrUserDemo"/>
     </Config>
   </FileSet>
-  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_matrix">
-    <File Path="$PSRCDIR/constrs_matrix/new/Nexys-A7-100T-Matrix.xdc">
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_vga">
+    <File Path="$PSRCDIR/constrs_vga/imports/new/Nexys-A7-100T.xdc">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/constrs_1_1/imports/new/Nexys-A7-100T.xdc"/>
+        <Attr Name="ImportTime" Val="1742931910"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>

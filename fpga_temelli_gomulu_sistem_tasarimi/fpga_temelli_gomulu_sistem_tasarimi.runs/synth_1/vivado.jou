@@ -2,12 +2,12 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Sun May  4 18:18:12 2025
-# Process ID: 13040
+# Start of session at: Sun May 25 23:15:27 2025
+# Process ID: 8760
 # Current directory: D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi.runs/synth_1
-# Command line: vivado.exe -log state_machine_button_debounce.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source state_machine_button_debounce.tcl
-# Log file: D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi.runs/synth_1/state_machine_button_debounce.vds
+# Command line: vivado.exe -log Nexys4DdrUserDemo.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Nexys4DdrUserDemo.tcl
+# Log file: D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi.runs/synth_1/Nexys4DdrUserDemo.vds
 # Journal file: D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi/fpga_temelli_gomulu_sistem_tasarimi.runs/synth_1\vivado.jou
 # Running On: DESKTOP-11IAEMT, OS: Windows, CPU Frequency: 2394 MHz, CPU Physical cores: 2, Host memory: 17098 MB
 #-----------------------------------------------------------
-source state_machine_button_debounce.tcl -notrace
+source Nexys4DdrUserDemo.tcl -notrace

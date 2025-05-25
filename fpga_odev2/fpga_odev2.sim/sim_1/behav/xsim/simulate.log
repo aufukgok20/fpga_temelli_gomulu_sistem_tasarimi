@@ -1,0 +1,4 @@
+Time resolution is 1 ps
+Failure: SIM DONE
+Time: 5180100 ns  Iteration: 0  Process: /tb_top/P_STIMULI  File: D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_odev2/fpga_odev2.srcs/sim_1/new/tb_top.vhd
+$finish called at time : 5180100 ns : File "D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/fpga_odev2/fpga_odev2.srcs/sim_1/new/tb_top.vhd" Line 152
