@@ -72,6 +72,23 @@ architecture Behavioral of vga is
 		OVERLAY_O : OUT std_logic
 		);
 	END COMPONENT;
+	
+	-- Display the SquareShapeDisplay
+	COMPONENT SquareShapeDisplay
+	GENERIC(
+      X_START : integer range 200 to (Integer'high) := 400; -- Logo Starting Horizontal Location
+      Y_START : integer := 200 -- Logo Starting Vertical Location
+	);
+	PORT(
+		CLK_I : IN std_logic;
+		H_COUNT_I : IN std_logic_vector(11 downto 0);
+		V_COUNT_I : IN std_logic_vector(11 downto 0);
+      -- Logo Red, Green and Blue signals
+		RED_O : OUT std_logic_vector(3 downto 0);
+		BLUE_O : OUT std_logic_vector(3 downto 0);
+		GREEN_O : OUT std_logic_vector(3 downto 0)
+		);
+	END COMPONENT;
 
 -------------------------------------------------------------
 
@@ -156,6 +173,19 @@ constant LOGO_RIGHT 		   : natural := FRM_LOGO_H_LOC + SZ_LOGO_WIDTH + 1;
 constant LOGO_TOP 			: natural := FRM_LOGO_V_LOC - 1;
 constant LOGO_BOTTOM 		: natural := FRM_LOGO_V_LOC + SZ_LOGO_HEIGHT + 1;
 
+
+constant SZ_SQUARE_WIDTH 	: natural := 500; -- Width of the SQUARE frame
+constant SZ_SQUARE_HEIGHT 	: natural := 500; -- Height of the SQUARE frame
+
+constant FRM_SQUARE_H_LOC 	: natural := 500; --  Starting horizontal location of the SQUARE frame
+constant FRM_SQUARE_V_LOC 	: natural := 500; -- Starting vertical location of the SQUARE frame
+
+-- Logo frame limits
+constant SQUARE_LEFT 	     : natural := FRM_SQUARE_H_LOC - 1;
+constant SQUARE_RIGHT 		 : natural := FRM_SQUARE_H_LOC + SZ_SQUARE_WIDTH + 1;
+constant SQUARE_TOP 	     : natural := FRM_SQUARE_V_LOC - 1;
+constant SQUARE_BOTTOM 		 : natural := FRM_SQUARE_V_LOC + SZ_SQUARE_HEIGHT + 1;
+
 -------------------------------------------------------------------------
 
 -- Signal Declarations
@@ -232,6 +262,11 @@ signal logo_green : std_logic_vector(3 downto 0);
 -- Overlay display signal
 signal overlay_en : std_logic;
 
+-- SquareShapeDisplay display signals
+signal Square_red   : std_logic_vector(3 downto 0);
+signal Square_blue 	: std_logic_vector(3 downto 0);
+signal Square_green : std_logic_vector(3 downto 0);
+
 ---------------------------------------------------------------------------------
 
 -- Pipe all of the interconnection signals coming from the displaying components
@@ -245,6 +280,11 @@ signal logo_green_dly 		: std_logic_vector(3 downto 0);
 
 -- Registered Overlay display signal
 signal overlay_en_dly : std_logic; 
+
+-- Registered SquareShapeDisplay display signals
+signal Square_red_dly			: std_logic_vector(3 downto 0);
+signal Square_blue_dly 		: std_logic_vector(3 downto 0);
+signal Square_green_dly 		: std_logic_vector(3 downto 0);
 
 begin
   
@@ -356,6 +396,25 @@ begin
 		ACTIVE_I    => active,
 		OVERLAY_O   => overlay_en
       );
+      
+--------------------------
+
+-- SquareShapeDisplay display instance
+
+--------------------------
+ 	Inst_SquareShapeDisplay: SquareShapeDisplay 
+	GENERIC MAP(
+		X_START	=> FRM_SQUARE_H_LOC,
+		Y_START	=> FRM_SQUARE_V_LOC
+	)
+	PORT MAP(
+		CLK_I => pxl_clk,
+		H_COUNT_I => h_cntr_reg,
+		V_COUNT_I => v_cntr_reg,
+		RED_O    => Square_red,
+		BLUE_O   => Square_blue,
+		GREEN_O  => Square_green
+	);
   
   
 ---------------------------------------
@@ -388,15 +447,18 @@ begin
     if (rising_edge(pxl_clk)) then
    
       logo_red_dly		<= logo_red;
-		logo_green_dly	   <= logo_green;
-		logo_blue_dly		<= logo_blue;
+	  logo_green_dly	<= logo_green;
+	  logo_blue_dly		<= logo_blue;
 
       overlay_en_dly <= overlay_en;
       
+      Square_red_dly	<= Square_red;
+	  Square_green_dly	<= Square_green;
+	  Square_blue_dly	<= Square_blue;
+      
       h_cntr_reg_dly <= h_cntr_reg;
-		v_cntr_reg_dly <= v_cntr_reg;
-      
-      
+	  v_cntr_reg_dly <= v_cntr_reg;
+
     end if;
   end process;
 
@@ -416,7 +478,11 @@ begin
                else
                -- logo display
                logo_red_dly when h_cntr_reg_dly > LOGO_LEFT and h_cntr_reg_dly < LOGO_RIGHT 
-                             and v_cntr_reg_dly < LOGO_BOTTOM and v_cntr_reg_dly > LOGO_TOP               
+                             and v_cntr_reg_dly < LOGO_BOTTOM and v_cntr_reg_dly > LOGO_TOP
+               else
+               -- Square display
+               Square_red_dly when h_cntr_reg_dly > SQUARE_LEFT and h_cntr_reg_dly < SQUARE_RIGHT 
+                              and v_cntr_reg_dly  < SQUARE_BOTTOM and v_cntr_reg_dly > SQUARE_TOP                 
                else
                -- Colorbar will be on the backround
                bg_red_dly;
@@ -433,6 +499,10 @@ begin
                logo_green_dly when h_cntr_reg_dly > LOGO_LEFT and h_cntr_reg_dly < LOGO_RIGHT 
                                and v_cntr_reg_dly < LOGO_BOTTOM and v_cntr_reg_dly > LOGO_TOP
                else
+               -- Square display
+               Square_green_dly when h_cntr_reg_dly > SQUARE_LEFT and h_cntr_reg_dly < SQUARE_RIGHT 
+                                 and v_cntr_reg_dly  < SQUARE_BOTTOM and v_cntr_reg_dly > SQUARE_TOP  
+               else
                -- Colorbar will be on the backround
                bg_green_dly;
 
@@ -447,6 +517,10 @@ begin
                -- logo display
                logo_blue_dly when h_cntr_reg_dly > LOGO_LEFT and h_cntr_reg_dly < LOGO_RIGHT 
                               and v_cntr_reg_dly < LOGO_BOTTOM and v_cntr_reg_dly > LOGO_TOP
+               else
+               -- Square display
+               Square_blue_dly when h_cntr_reg_dly > SQUARE_LEFT and h_cntr_reg_dly < SQUARE_RIGHT 
+                                and v_cntr_reg_dly  < SQUARE_BOTTOM and v_cntr_reg_dly > SQUARE_TOP  
                else
                -- Colorbar will be on the backround
                bg_blue_dly;

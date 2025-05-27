@@ -38,15 +38,14 @@ begin
                     when x"04" => shape_type <= "10"; shape_color <= "110"; -- sarý üçgen
 
                     -- Hareket komutlarý
-                    when x"05" => move_cmd <= "01"; -- sað
-                    when x"06" => move_cmd <= "10"; -- sol
-                    when x"07" => move_cmd <= "11"; -- yukarý
-                    when x"08" => move_cmd <= "00"; -- aþaðý
-
+                    when x"05" => move_cmd <= "01"; update_flag <= '1';-- sað
+                    when x"06" => move_cmd <= "10"; update_flag <= '1';-- sol
+                    when x"07" => move_cmd <= "11"; update_flag <= '1';-- yukarý
+                    when x"08" => move_cmd <= "00"; update_flag <= '1';-- aþaðý
+                    
                     when others =>
                         null;
                 end case;
-                update_flag <= '1';
             end if;
         end if;
     end process;

@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity shape_controller is
+entity move_controller is
     Port (
         clk         : in  std_logic;
         reset       : in  std_logic;
@@ -19,9 +19,9 @@ entity shape_controller is
         pos_x           : out integer range 0 to 639;  -- VGA çözünürlük uyumlu
         pos_y           : out integer range 0 to 479
     );
-end shape_controller;
+end move_controller;
 
-architecture Behavioral of shape_controller is
+architecture Behavioral of move_controller is
     signal x_pos  : integer range 0 to 639 := 320;  -- baþlangýç merkezi
     signal y_pos  : integer range 0 to 479 := 240;
 
@@ -34,14 +34,10 @@ begin
             x_pos <= 320;
             y_pos <= 240;
             shape_type_out  <= "00";
-            shape_color_out <= "000";
+            shape_color_out <= "000"; 
 
         elsif rising_edge(clk) then
             if update_flag = '1' then
-                -- Þekil deðiþtir
-                shape_type_out  <= shape_type_in;
-                shape_color_out <= shape_color_in;
-
                 -- Hareket komutu varsa pozisyonu güncelle
                 case move_cmd is
                     when "01" => -- sað

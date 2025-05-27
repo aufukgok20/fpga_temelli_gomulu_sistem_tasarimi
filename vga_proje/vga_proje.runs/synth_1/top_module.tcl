@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -89,7 +88,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
   D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/command_decoder.vhd
-  D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/shape_controller.vhd
+  D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/move_controller.vhd
   D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/shape_drawer.vhd
   D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/uart_rx.vhd
   D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/vga_sync.vhd

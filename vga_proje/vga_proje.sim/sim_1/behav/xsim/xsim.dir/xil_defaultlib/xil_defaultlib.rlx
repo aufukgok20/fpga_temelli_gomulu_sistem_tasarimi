@@ -1,0 +1,11 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sim_1/new/tb_top_module.vhd,1748372451,vhdl,,,,tb_top_module,,,,,,,,
+D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/command_decoder.vhd,1748304208,vhdl,,,,command_decoder,,,,,,,,
+D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/move_controller.vhd,1748304261,vhdl,,,,move_controller,,,,,,,,
+D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/shape_drawer.vhd,1748300107,vhdl,,,,shape_drawer,,,,,,,,
+D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/top_module.vhd,1748304313,vhdl,D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sim_1/new/tb_top_module.vhd,,,top_module,,,,,,,,
+D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/uart_rx.vhd,1748196296,vhdl,,,,uart_rxx,,,,,,,,
+D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/vga_sync.vhd,1748294822,vhdl,,,,vga_sync,,,,,,,,

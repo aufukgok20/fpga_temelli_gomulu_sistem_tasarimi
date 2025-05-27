@@ -1,0 +1,12 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../vga_proje.srcs/sources_1/new/command_decoder.vhd" \
+"../../../../vga_proje.srcs/sources_1/new/move_controller.vhd" \
+"../../../../vga_proje.srcs/sources_1/new/shape_drawer.vhd" \
+"../../../../vga_proje.srcs/sources_1/new/top_module.vhd" \
+"../../../../vga_proje.srcs/sources_1/new/uart_rx.vhd" \
+"../../../../vga_proje.srcs/sources_1/new/vga_sync.vhd" \
+"../../../../vga_proje.srcs/sim_1/new/tb_top_module.vhd" \
+
+# Do not sort compile order
+nosort

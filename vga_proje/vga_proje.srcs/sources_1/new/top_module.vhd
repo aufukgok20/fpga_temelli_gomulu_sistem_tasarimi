@@ -49,7 +49,7 @@ component command_decoder is
     );
 end component;
 
-component shape_controller is
+component move_controller is
     Port (
         clk         : in  std_logic;
         reset       : in  std_logic;
@@ -61,8 +61,6 @@ component shape_controller is
         update_flag    : in std_logic;
         
         -- VGA çiziciye çýkýþlar
-        shape_type_out  : out std_logic_vector(1 downto 0);
-        shape_color_out : out std_logic_vector(2 downto 0);
         pos_x           : out integer range 0 to 639;  -- VGA çözünürlük uyumlu
         pos_y           : out integer range 0 to 479
     );
@@ -70,13 +68,13 @@ end component;
 
 component vga_sync is
     Port (
-        clk        : in  std_logic;  -- 25 MHz clock (640x480 için)
+        clk        : in  std_logic;  -- 100 MHz clock (640x480 için)
         reset      : in  std_logic;
         hsync      : out std_logic;
         vsync      : out std_logic;
+        video_on   : out std_logic;
         pixel_x    : out integer range 0 to 799;
-        pixel_y    : out integer range 0 to 524;
-        video_on   : out std_logic
+        pixel_y    : out integer range 0 to 524
     );
 end component;
 
@@ -97,44 +95,27 @@ component shape_drawer is
         blue_out      : out std_logic
     );
 end component;
-    
-    -- Clock Division
-    signal clk_25mhz : std_logic := '0';
 
     -- UART Signals
     signal uart_data     : std_logic_vector(7 downto 0);
     signal uart_ready    : std_logic;
 
     -- Komut çözümleyici sinyalleri
-    signal shape_type    : std_logic_vector(1 downto 0);
-    signal shape_color   : std_logic_vector(2 downto 0);
-    signal move_cmd      : std_logic_vector(1 downto 0);
-    signal update_flag   : std_logic;
+    signal shape_type_rx    : std_logic_vector(1 downto 0):= (others => '0');
+    signal shape_color_rx   : std_logic_vector(2 downto 0):= (others => '0');
+    signal move_cmd_rx      : std_logic_vector(1 downto 0):= (others => '0');
+    signal update_flag_rx   : std_logic;
 
     -- VGA Sync Sinyalleri
     signal pixel_x       : integer range 0 to 799;
     signal pixel_y       : integer range 0 to 524;
     signal video_on      : std_logic;
-
+    
     -- Þekil konumu
     signal pos_x         : integer range 0 to 639;
     signal pos_y         : integer range 0 to 479;
-
+    
 begin
-
-    -- Clock Divider: 100 MHz ? 25 MHz
-    process(clk_100mhz)
-        variable cnt : integer range 0 to 3 := 0;
-    begin
-        if rising_edge(clk_100mhz) then
-            if cnt = 3 then
-                cnt := 0;
-                clk_25mhz <= not clk_25mhz;
-            else
-                cnt := cnt + 1;
-            end if;
-        end if;
-    end process;
 
     -- UART Receiver
     inst_uart_rx : uart_rxx
@@ -157,23 +138,21 @@ begin
             reset       => reset,
             data_in     => uart_data,
             data_valid  => uart_ready,
-            shape_type  => shape_type,
-            shape_color => shape_color,
-            move_cmd    => move_cmd,
-            update_flag => update_flag
+            shape_type  => shape_type_rx,
+            shape_color => shape_color_rx,
+            move_cmd    => move_cmd_rx,
+            update_flag => update_flag_rx
         );
 
-    -- Þekil Kontrol
-    controller_inst : shape_controller
+    -- Hareket Kontrol
+    move_controller_inst : move_controller
         port map (
             clk            => clk_100mhz,
             reset          => reset,
-            shape_type_in  => shape_type,
-            shape_color_in => shape_color,
-            move_cmd       => move_cmd,
-            update_flag    => update_flag,
-            shape_type_out => shape_type,
-            shape_color_out=> shape_color,
+            shape_type_in  => shape_type_rx,
+            shape_color_in => shape_color_rx,
+            move_cmd       => move_cmd_rx,
+            update_flag    => update_flag_rx,
             pos_x          => pos_x,
             pos_y          => pos_y
         );
@@ -181,26 +160,26 @@ begin
     -- VGA Senkronizasyon
     vga_sync_inst : vga_sync
         port map (
-            clk        => clk_25mhz,
+            clk        => clk_100mhz,
             reset      => reset,
             hsync      => hsync,
             vsync      => vsync,
+            video_on   => video_on,
             pixel_x    => pixel_x,
-            pixel_y    => pixel_y,
-            video_on   => video_on
+            pixel_y    => pixel_y
         );
-
+ 
     -- Þekil Çizimi
     drawer_inst : shape_drawer
         port map (
-            clk         => clk_25mhz,
+            clk         => clk_100mhz,
             video_on    => video_on,
             pixel_x     => pixel_x,
             pixel_y     => pixel_y,
             shape_x     => pos_x,
             shape_y     => pos_y,
-            shape_type  => shape_type,
-            shape_color => shape_color,
+            shape_type  => shape_type_rx,
+            shape_color => shape_color_rx,
             red_out     => vga_red,
             green_out   => vga_green,
             blue_out    => vga_blue

@@ -38,7 +38,7 @@ begin
             if video_on = '1' then
                 dx := pixel_x - shape_x;
                 dy := pixel_y - shape_y;
-
+               
                 case shape_type is
                     when "00" =>  -- KARE
                         if abs(dx) <= SHAPE_SIZE and abs(dy) <= SHAPE_SIZE then
@@ -66,8 +66,8 @@ begin
                 end case;
             end if;
         end if;
-    end process;
-
+    end process; 
+ 
     -- Renk çýkýþlarýný baðla
     red_out   <= pixel_r;
     green_out <= pixel_g;

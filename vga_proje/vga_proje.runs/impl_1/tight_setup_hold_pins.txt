@@ -1,0 +1,7 @@
++====================+===================+===========================+
+| Launch Setup Clock | Launch Hold Clock | Pin                       |
++====================+===================+===========================+
+| sys_clk_pin        | sys_clk_pin       | drawer_inst/pixel_b_reg/D |
+| sys_clk_pin        | sys_clk_pin       | drawer_inst/pixel_g_reg/D |
+| sys_clk_pin        | sys_clk_pin       | drawer_inst/pixel_r_reg/D |
++--------------------+-------------------+---------------------------+

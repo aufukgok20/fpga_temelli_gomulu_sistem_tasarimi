@@ -1,0 +1,14 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/command_decoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'command_decoder'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/move_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'move_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/shape_drawer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'shape_drawer'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/top_module.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_module'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/uart_rx.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'uart_rxx'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sources_1/new/vga_sync.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'vga_sync'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/GIT/fpga_temelli_gomulu_sistem_tasarimi/vga_proje/vga_proje.srcs/sim_1/new/tb_top_module.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_top_module'

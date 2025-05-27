@@ -3,6 +3,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity tb_top_module is
+    generic (
+        c_clkfreq		: integer := 100_000_000;
+        c_baudrate		: integer := 9_600
+    );
 end tb_top_module;
 
 architecture behavior of tb_top_module is
@@ -19,8 +23,10 @@ architecture behavior of tb_top_module is
 
     -- UART zamanlamasý (9600 bps için)
     constant CLK_PERIOD     : time := 10 ns;        -- 100 MHz clock
-    constant UART_BAUD_RATE : integer := 115_200;
-    constant UART_BIT_TIME  : time := 1 sec / UART_BAUD_RATE;
+    constant c_baud9600  	: time := 1 us;
+    
+    constant c_hex02		: std_logic_vector (9 downto 0) := '1' & x"02" & '0';
+    constant c_hex05		: std_logic_vector (9 downto 0) := '1' & x"05" & '0';
 
 
 
@@ -48,64 +54,31 @@ begin
             vga_blue   => vga_blue
         );
 
-    -- Reset süreci
-    stim_proc : process
-
-    --             -- UART karakter gönderme prosedürü
-    --     procedure send_uart_byte(
-    -- data : in std_logic_vector(7 downto 0)
-    -- ) is
-    -- begin
-    --     uart_rx <= '0';  -- Start bit
-    --     wait for UART_BIT_TIME;
-
-    --     for i in 0 to 7 loop
-    --         uart_rx <= data(i);
-    --         wait for UART_BIT_TIME;
-    --     end loop;
-
-    --     uart_rx <= '1';  -- Stop bit
-    --     wait for UART_BIT_TIME;
-    -- end send_uart_byte;
-
+    process
     begin
-        wait for 200 ns;
+        wait for 100 ns;
         reset <= '0';  -- Reset kaldýrýldý
         wait for 100 ns;
 
         -- UART ile: 02 ? Mavi kare komutu gönder
-        send_uart_byte(x"02");
-        wait for 2 ms;
-
+        for i in 0 to 9 loop
+	       uart_rx <= c_hex02(i);
+	       wait for c_baud9600;
+        end loop;
+        
+        wait for 10 us;
+        
         -- UART ile: 05 ? Hareket komutu gönder
-        send_uart_byte(x"05");
-        wait for 2 ms;
-
-        wait;
-    end process;
-    
-    process (clk_100mhz)
-
-    -- UART karakter gönderme prosedürü
-        procedure send_uart_byte(
-    data : in std_logic_vector(7 downto 0);
-    signal rx_uart : in STD_LOGIC := '1'
-    ) is
-    begin
-        rx_uart <= '0';  -- Start bit
-        wait for UART_BIT_TIME;
-
-        for i in 0 to 7 loop
-            rx_uart <= data(i);
-            wait for UART_BIT_TIME;
+        for i in 0 to 9 loop
+	       uart_rx <= c_hex05(i);
+	       wait for c_baud9600;
         end loop;
 
-        rx_uart <= '1';  -- Stop bit
-        wait for UART_BIT_TIME;
-    end send_uart_byte;
+        wait for 20 us;
 
-    begin
-        uart_rx <= rx_uart;
+        assert false
+        report "SIM DONE"
+        severity failure;
     end process;
 
 end behavior;

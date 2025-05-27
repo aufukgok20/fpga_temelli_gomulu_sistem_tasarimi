@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date             : Sun May 25 23:36:12 2025
+| Date             : Mon May 26 12:22:41 2025
 | Host             : DESKTOP-11IAEMT running 64-bit major release  (build 9200)
 | Command          : report_power -file Nexys4DdrUserDemo_power_routed.rpt -pb Nexys4DdrUserDemo_power_summary_routed.pb -rpx Nexys4DdrUserDemo_power_routed.rpx
 | Design           : Nexys4DdrUserDemo
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.249        |
+| Total On-Chip Power (W)  | 0.250        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.150        |
+| Dynamic (W)              | 0.151        |
 | Device Static (W)        | 0.099        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.9         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.004 |        8 |       --- |             --- |
-| Slice Logic    |     0.002 |     3382 |       --- |             --- |
-|   LUT as Logic |     0.002 |     2436 |     63400 |            3.84 |
-|   CARRY4       |    <0.001 |       46 |     15850 |            0.29 |
+| Slice Logic    |     0.002 |     3506 |       --- |             --- |
+|   LUT as Logic |     0.002 |     2490 |     63400 |            3.93 |
+|   CARRY4       |    <0.001 |       65 |     15850 |            0.41 |
 |   F7/F8 Muxes  |    <0.001 |      272 |     63400 |            0.43 |
-|   Register     |    <0.001 |      270 |    126800 |            0.21 |
-|   Others       |     0.000 |      115 |       --- |             --- |
-| Signals        |     0.002 |     2811 |       --- |             --- |
+|   Register     |    <0.001 |      294 |    126800 |            0.23 |
+|   Others       |     0.000 |      117 |       --- |             --- |
+| Signals        |     0.002 |     2858 |       --- |             --- |
 | Block RAM      |     0.006 |       32 |       135 |           23.70 |
 | MMCM           |     0.135 |        1 |         6 |           16.67 |
 | I/O            |    <0.001 |       16 |       210 |            7.62 |
 | Static Power   |     0.099 |          |           |                 |
-| Total          |     0.249 |          |           |                 |
+| Total          |     0.250 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.030 |       0.014 |      0.016 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.031 |       0.015 |      0.016 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.093 |       0.075 |      0.018 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -148,13 +148,13 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| Nexys4DdrUserDemo    |     0.150 |
+| Nexys4DdrUserDemo    |     0.151 |
 |   Inst_ClkGen        |     0.136 |
 |     inst             |     0.136 |
-|   Inst_VGA           |     0.014 |
+|   Inst_VGA           |     0.015 |
 |     Inst_LogoDisplay |     0.007 |
 |       Inst_BRAM_1    |     0.007 |
-|     Inst_OverlayCtrl |     0.005 |
+|     Inst_OverlayCtrl |     0.006 |
 +----------------------+-----------+
 
 
